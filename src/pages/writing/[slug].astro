@@ -5,10 +5,10 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../components/BaseLayout.astro';
 import { profile } from '../../data/profile';
 import { formatDate } from '../../lib/format';
-import { getWritingMeta, isRealWritingPost } from '../../lib/writing';
+import { getWritingMeta } from '../../lib/writing';
 
 export async function getStaticPaths() {
-  const entries = (await getCollection('writing')).filter(isRealWritingPost);
+  const entries = await getCollection('writing');
   return entries.map((entry: CollectionEntry<'writing'>) => ({
     params: { slug: getWritingMeta(entry).canonicalSlug },
     props: { entry },

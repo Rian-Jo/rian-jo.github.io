@@ -11,7 +11,7 @@ import { profile } from '../data/profile';
 import { site } from '../data/site';
 import { formatDate } from '../lib/format';
 import { sortPublications } from '../lib/publications';
-import { getWritingMeta, isRealWritingPost, sortWriting } from '../lib/writing';
+import { getWritingMeta, sortWriting } from '../lib/writing';
 
 const publications = sortPublications(await getCollection('publications'));
 const selectedPublications = site.selectedPublicationKeys
@@ -23,7 +23,7 @@ const projects: CollectionEntry<'projects'>[] = (await getCollection('projects')
     (left: CollectionEntry<'projects'>, right: CollectionEntry<'projects'>) =>
       left.data.order - right.data.order,
   );
-const writing = sortWriting((await getCollection('writing')).filter(isRealWritingPost)).slice(0, 3);
+const writing = sortWriting(await getCollection('writing')).slice(0, 3);
 ---
 
 <BaseLayout>

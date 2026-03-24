@@ -5,9 +5,9 @@ import BaseLayout from '../../components/BaseLayout.astro';
 import SectionTitle from '../../components/SectionTitle.astro';
 import WritingCard from '../../components/WritingCard.astro';
 import { formatDate } from '../../lib/format';
-import { getWritingMeta, isRealWritingPost, sortWriting } from '../../lib/writing';
+import { getWritingMeta, sortWriting } from '../../lib/writing';
 
-const writing = sortWriting((await getCollection('writing')).filter(isRealWritingPost));
+const writing = sortWriting(await getCollection('writing'));
 ---
 
 <BaseLayout title="Writing">

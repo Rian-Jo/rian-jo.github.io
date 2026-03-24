@@ -3,10 +3,10 @@ import { getCollection } from 'astro:content';
 
 import { site } from '../data/site';
 import { buildRssFeed } from '../lib/rss';
-import { getWritingMeta, isRealWritingPost, sortWriting } from '../lib/writing';
+import { getWritingMeta, sortWriting } from '../lib/writing';
 
 export async function GET(context: APIContext) {
-  const writing = sortWriting((await getCollection('writing')).filter(isRealWritingPost));
+  const writing = sortWriting(await getCollection('writing'));
 
   const xml = buildRssFeed({
     title: `${site.title} Writing`,

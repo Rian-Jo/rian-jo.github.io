@@ -74,16 +74,8 @@ export function getLegacyWritingSlug(entry: CollectionEntry<'writing'>): string 
   return getWritingSlugStem(entry).replace(/\[([^\]]+)]/g, '$1');
 }
 
-export function getWritingLanguage(entry: CollectionEntry<'writing'>): 'en' | 'ko' {
-  if (entry.id.includes('welcome-to-jekyll')) {
-    return 'en';
-  }
-
+export function getWritingLanguage(_entry: CollectionEntry<'writing'>): 'en' | 'ko' {
   return 'ko';
-}
-
-export function isRealWritingPost(entry: CollectionEntry<'writing'>): boolean {
-  return !entry.id.includes('welcome-to-jekyll');
 }
 
 export function getWritingMeta(entry: CollectionEntry<'writing'>): WritingMeta {

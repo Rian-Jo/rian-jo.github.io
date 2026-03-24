@@ -37,3 +37,4 @@ npm run build
 - `/home/*` routes are preserved as redirects to the new canonical pages.
 - Legacy dated blog URLs are preserved for migrated writing posts.
 - The public profile and CV are kept concise and research-first rather than mirroring a full resume export.
+- In GitHub Pages settings, the source must be `GitHub Actions`. Branch-based Pages builds will try to run Jekyll against the Astro source tree and fail.
