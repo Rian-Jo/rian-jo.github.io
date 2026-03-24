@@ -1,0 +1,56 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection, render } from 'astro:content';
+
+import BaseLayout from '../../components/BaseLayout.astro';
+import { profile } from '../../data/profile';
+import { formatDate } from '../../lib/format';
+import { getWritingMeta, isRealWritingPost } from '../../lib/writing';
+
+export async function getStaticPaths() {
+  const entries = (await getCollection('writing')).filter(isRealWritingPost);
+  return entries.map((entry: CollectionEntry<'writing'>) => ({
+    params: { slug: getWritingMeta(entry).canonicalSlug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props as { entry: CollectionEntry<'writing'> };
+const meta = getWritingMeta(entry);
+const { Content } = await render(entry);
+const pageUrl = new URL(`/writing/${meta.canonicalSlug}/`, Astro.site ?? Astro.url).toString();
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: entry.data.title,
+  description: meta.excerpt,
+  url: pageUrl,
+  datePublished: meta.publishedAt.toISOString(),
+  inLanguage: meta.language,
+  author: {
+    '@type': 'Person',
+    name: profile.name,
+  },
+};
+---
+
+<BaseLayout title={entry.data.title} description={meta.excerpt} type="article">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <article class="article-shell">
+    <div class="article-shell__meta">
+      <p class="eyebrow">Writing</p>
+      <h1>{entry.data.title}</h1>
+      <p class="lede">{meta.excerpt}</p>
+      <p>
+        {formatDate(meta.publishedAt)} · {meta.readingMinutes} min read ·{' '}
+        {meta.language === 'ko' ? 'Korean' : 'English'}
+      </p>
+      <div class="link-list">
+        <a href={meta.legacyPath}>Legacy path</a>
+      </div>
+    </div>
+    <div class="article-shell__body">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

@@ -42,4 +42,6 @@ validation-report.json
 node_modules
 .sass-cache
 .jekyll-metadata
+.astro
+dist
 *.gem

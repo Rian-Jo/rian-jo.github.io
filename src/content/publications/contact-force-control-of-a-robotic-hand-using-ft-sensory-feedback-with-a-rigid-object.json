@@ -1,0 +1,27 @@
+{
+  "key": "CASE2012",
+  "slug": "contact-force-control-of-a-robotic-hand-using-ft-sensory-feedback-with-a-rigid-object",
+  "type": "inproceedings",
+  "title": "Contact force control of a robotic hand using F/T sensory feedback with a rigid object",
+  "authors": [
+    "Joonhee Jo",
+    "Sung-Kyun Kim",
+    "Yonghwan Oh",
+    "Sang-Rok Oh"
+  ],
+  "venue": "IEEE International Conference on Automation Science and Engineering (CASE)",
+  "year": 2012,
+  "doi": "10.1109/CoASE.2012.6386438",
+  "abstract": "There have developed various robotic hands since the 1960's with the control theories. For a robotic hand, manipulating objects as human does is a quite difficult story and grasping or pinching objects should be preceded before manipulation. Those operations are based on interaction between robotic hand and arbitrary objects. It means how strongly a robotic hand grasps arbitrary object with stable and unbreaking motion when interactions occur. This paper attempts a grasping force control of a velocity controlled robotic hand using external Force/Torque (F/T) sensors. This control uses F/T sensor feedback and produces a command torque. Then, velocity-torque transformer converts a command torque into an input velocity to the robotic hand system. The algorithm is analyzed through an experiment that shows how a grasping force affects arbitrary objects and obtained competent results.",
+  "keywords": [
+    "robot hand",
+    "contact force control"
+  ],
+  "pages": "436--441",
+  "featured": false,
+  "links": {
+    "pdf": "/publications/files/CASE2012.pdf",
+    "video": "https://youtu.be/WYbUZechILU",
+    "external": "https://ieeexplore.ieee.org/document/6386438"
+  }
+}

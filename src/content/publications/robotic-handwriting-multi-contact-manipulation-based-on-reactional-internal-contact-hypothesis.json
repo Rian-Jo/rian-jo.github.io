@@ -1,0 +1,28 @@
+{
+  "key": "Kim2014Robotic",
+  "slug": "robotic-handwriting-multi-contact-manipulation-based-on-reactional-internal-contact-hypothesis",
+  "type": "inproceedings",
+  "title": "Robotic handwriting: Multi-contact manipulation based on Reactional Internal Contact Hypothesis",
+  "authors": [
+    "Joonhee Jo",
+    "Sung-Kyun Kim",
+    "Yonghwan Oh",
+    "Sang-Rok Oh"
+  ],
+  "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems",
+  "year": 2014,
+  "doi": "10.1109/IROS.2014.6942663",
+  "abstract": "When one uses a hand-held tool, the fingers often make the tool to be in contact with the palm in the form of multi-contact manipulation. Multi-contact manipulation is useful for object-environment interaction tasks because it can provide both powerful grasping of the object body and dexterous manipulation of the object end-effector. However, dealing with the internal link contact with the object is not trivial. In this paper, we propose Reactional Internal Contact Hypothesis that regards the internal contact force as a reaction force so that the desired finger force can be reduced. By taking a handwriting task as an example, optimal configuration search and grasping force computation problems are addressed based on this hypothesis and validated via dynamic simulation.",
+  "keywords": [
+    "robot hand",
+    "hand writing",
+    "multi-contact"
+  ],
+  "pages": "877--884",
+  "featured": false,
+  "links": {
+    "pdf": "/publications/files/2nd_author/Kim2014Robotic.pdf",
+    "video": "https://youtu.be/K-uz-XPupkI",
+    "external": "https://ieeexplore.ieee.org/document/6942663"
+  }
+}

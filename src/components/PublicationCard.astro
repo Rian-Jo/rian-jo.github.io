@@ -1,0 +1,23 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  authors: string[];
+  venue: string;
+  year: number;
+  keywords: string[];
+}
+
+const { href, title, authors, venue, year, keywords } = Astro.props;
+---
+
+<article class="publication-row">
+  <h3 class="publication-row__title"><a href={href}>{title}</a></h3>
+  <p>{authors.join(', ')}</p>
+  <p class="publication-row__meta">
+    {venue} · {year}
+  </p>
+  <div class="pill-row">
+    {keywords.slice(0, 3).map((keyword) => <span class="pill">{keyword}</span>)}
+  </div>
+</article>

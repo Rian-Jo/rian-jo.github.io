@@ -1,0 +1,28 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  to: string;
+  title?: string;
+}
+
+const { to, title = 'Redirecting…' } = Astro.props;
+const absolute = new URL(to, site.url).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0;url=${absolute}`} />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={absolute} />
+    <title>{title}</title>
+    <script is:inline define:vars={{ absolute }}>
+      window.location.replace(absolute);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href={absolute}>{absolute}</a>.</p>
+  </body>
+</html>

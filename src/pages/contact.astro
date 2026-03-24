@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import { profile } from '../data/profile';
+---
+
+<BaseLayout title="Contact">
+  <section class="section-block">
+    <SectionTitle
+      eyebrow="Contact"
+      title="Direct contact and public profiles"
+      summary="This replaces the old scattered sidebar social links with a single focused contact page."
+    />
+    <div class="grid-two">
+      {
+        profile.contactLinks.map((link) => (
+          <article class="card">
+            <h3>{link.label}</h3>
+            <p><a href={link.href}>{link.href}</a></p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

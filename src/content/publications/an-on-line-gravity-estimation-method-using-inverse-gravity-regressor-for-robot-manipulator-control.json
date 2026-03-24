@@ -1,0 +1,26 @@
+{
+  "key": "IROS2015",
+  "slug": "an-on-line-gravity-estimation-method-using-inverse-gravity-regressor-for-robot-manipulator-control",
+  "type": "inproceedings",
+  "title": "An on-line gravity estimation method using inverse gravity regressor for robot manipulator control",
+  "authors": [
+    "Joonhee Jo",
+    "DongHyun Lee",
+    "Duc Trong Tran",
+    "Yonghwan Oh",
+    "Sang-Rok Oh"
+  ],
+  "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "year": 2015,
+  "doi": "10.1109/IROS.2015.7354145",
+  "abstract": "When a robotic manipulator is controlled, computing gravity force of the robot is the primary issue. Exact model parameters are not easy to be known in the practical robot system due to the uncertainty of the robot dynamics. Hence, the gravity force is presented by a combination of gravity regressor and robot dynamic parameters and is compensated by the estimation of uncertain robot dynamic parameters. Previous researches conducted estimation by using transpose of gravity regressor and full form of dynamic parameters which is not general form however this paper estimates the gravity force using the generalized gravity regressor which is regardless of the dimension and structure of the robot under the quasi-static state. Once the estimation is completed, the estimated value can be used to compute the gravitational force and control the robot. It is shown that the generalized decomposition of gravity regressor and estimation process. The results are validated through an experiment by implementing the algorithm on an upper-body dual arm robot.",
+  "keywords": [
+    "online gravity estimation",
+    "inverse gravity regressor"
+  ],
+  "featured": false,
+  "links": {
+    "pdf": "/publications/files/IROS2015.pdf",
+    "external": "https://ieeexplore.ieee.org/document/7354145"
+  }
+}

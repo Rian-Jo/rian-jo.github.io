@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import { profile } from '../data/profile';
+---
+
+<BaseLayout title="CV">
+  <section class="section-block">
+    <SectionTitle
+      eyebrow="CV"
+      title="A concise public CV, not a full LinkedIn export."
+      summary="This page keeps the chronology short, research-facing, and consistent with the public profile rebuilt from LinkedIn-backed details plus publication and lab history."
+    />
+    <div class="timeline">
+      {
+        profile.experience.map((entry) => (
+          <article class="timeline-item">
+            <p class="timeline-item__period">{entry.period}</p>
+            <h3>{entry.title}</h3>
+            <p>{entry.organization}</p>
+            <p>{entry.summary}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section-block">
+    <SectionTitle
+      eyebrow="Education"
+      title="Training and academic background"
+      summary="Education stays intentionally compact so the site supports publications and projects without turning into a resume dump."
+    />
+    <div class="timeline">
+      {
+        profile.education.map((entry) => (
+          <article class="timeline-item">
+            <h3>{entry.degree}</h3>
+            <p>{entry.organization}</p>
+            <p>{entry.summary}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

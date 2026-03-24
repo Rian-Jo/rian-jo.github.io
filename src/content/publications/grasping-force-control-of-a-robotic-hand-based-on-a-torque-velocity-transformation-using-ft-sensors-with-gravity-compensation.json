@@ -1,0 +1,29 @@
+{
+  "key": "IECON13",
+  "slug": "grasping-force-control-of-a-robotic-hand-based-on-a-torque-velocity-transformation-using-ft-sensors-with-gravity-compensation",
+  "type": "inproceedings",
+  "title": "Grasping force control of a robotic hand based on a torque-velocity transformation using F/T sensors with gravity compensation",
+  "authors": [
+    "Joonhee Jo",
+    "Sung-Kyun Kim",
+    "Yonghwan Oh",
+    "Sang-Rok Oh"
+  ],
+  "venue": "Annual Conference of the IEEE Industrial Electronics Society (IECON)",
+  "year": 2013,
+  "doi": "10.1109/IECON.2013.6699801",
+  "abstract": "In this paper, the grasping force control of a robotic hand based on a torque to velocity transformation using force/torque (F/T) sensors with gravity compensation is addressed. The force controller is designed and the task force is transformed into command torque. Then, the torque is converted into command velocity for the velocity servo control through torque to velocity transformation. Inner velocity controller is modeled, and the additional torque due to the gravity effect is augmented using superposition principle; then, the analysis of the overall system and controller is conducted through the grasping experiment. As a result of this, competent results are obtained.",
+  "keywords": [
+    "robot hand",
+    "grasping force control",
+    "torque-velocity transformation",
+    "gravity compensation"
+  ],
+  "pages": "4150--4155",
+  "featured": false,
+  "links": {
+    "pdf": "/publications/files/IECON13.pdf",
+    "video": "https://youtu.be/n4b5ob39p_s",
+    "external": "https://ieeexplore.ieee.org/document/6699801"
+  }
+}

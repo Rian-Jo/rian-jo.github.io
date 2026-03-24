@@ -1,0 +1,24 @@
+{
+  "key": "ICRA2021",
+  "slug": "robust-landing-stabilization-of-humanoid-robot-on-uneven-terrain-via-admittance-control-and-heel-strike-motion",
+  "type": "inproceedings",
+  "title": "Robust Landing Stabilization of Humanoid Robot on Uneven Terrain via Admittance Control and Heel Strike Motion",
+  "authors": [
+    "Joonhee Jo",
+    "Gyunghoon Park",
+    "Yonghwan Oh"
+  ],
+  "venue": "IEEE International Conference on Robotics and Automation (ICRA)",
+  "year": 2021,
+  "abstract": "This paper addresses robust landing stabilization in humanoid locomotion on uneven terrain. The core idea is to find a configuration of the robot that results in small impulsive force when an unexpected obstacle is encountered, and to adjust post-contact reference for swing foot with which the pose of the foot is stabilized on the obstacle. This can be achieved by walking with heel strike motion (validated by the impact map analysis) and by employing hybrid admittance control combining the admittance control with reset of postcontact reference, embedded into the momentum-based wholebody control framework. The validity of the proposed algorithm is verified by simulation with a physics engine.",
+  "keywords": [
+    "legged locomotion",
+    "landing stabilization",
+    "admittance control",
+    "heel strike"
+  ],
+  "featured": true,
+  "links": {
+    "pdf": "/publications/files/ICRA2021.pdf"
+  }
+}

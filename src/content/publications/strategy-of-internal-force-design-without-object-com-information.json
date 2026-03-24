@@ -1,0 +1,27 @@
+{
+  "key": "URAI2013",
+  "slug": "strategy-of-internal-force-design-without-object-com-information",
+  "type": "article",
+  "title": "Strategy of internal force design without object com information",
+  "authors": [
+    "Jo Joonhee",
+    "Sung-Kyun Kim",
+    "Yonghwan Oh",
+    "Sang-Rok Oh"
+  ],
+  "venue": "International Conference on Ubiquitous Robots and Ambient Intelligence (URAI)",
+  "year": 2013,
+  "doi": "10.1109/URAI.2013.6677504",
+  "abstract": "There are a variety of methods to grasp an object. An internal force control is used to grasp an object and be compliant when an external disturbance is applied. simultaneously. An internal force control for a ball type object is not proper for a box type object grasping due to the error between an origin of the object reference frame and information about the center of mass (CoM) of the object. This paper considers dynamic situation during internal force control and suggests a proper control strategy for box type objects compared to the ball type object. To validate the proposed algorithm, internal force control using Allegro hand is conducted and showed competent results.",
+  "keywords": [
+    "robotic hand",
+    "internal force design"
+  ],
+  "pages": "167--170",
+  "featured": false,
+  "links": {
+    "pdf": "/publications/files/URAI2013.pdf",
+    "video": "https://youtu.be/nrgSO3Gu2wQ",
+    "external": "https://ieeexplore.ieee.org/document/6677504"
+  }
+}

@@ -1,0 +1,78 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../components/BaseLayout.astro';
+import PublicationCard from '../components/PublicationCard.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import { profile } from '../data/profile';
+import { site } from '../data/site';
+import { sortPublications } from '../lib/publications';
+
+const publications = sortPublications(await getCollection('publications')).slice(0, 6);
+---
+
+<BaseLayout title="Research">
+  <section class="section-block">
+    <SectionTitle
+      eyebrow="Research"
+      title="Control problems where contact and uncertainty matter."
+      summary="This page replaces category-driven archive navigation with a narrative around the actual robotics questions the work addresses."
+    />
+    <div class="grid-three">
+      {
+        site.researchFocus.map((item) => (
+          <article class="card">
+            <h3>{item.title}</h3>
+            <p>{item.summary}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section-block">
+    <SectionTitle
+      eyebrow="Themes"
+      title="How the research areas connect"
+      summary="The recurring question is how to make physically coupled, high-dimensional systems behave robustly when contact is uncertain, terrain varies, or the task is underconstrained."
+    />
+    <div class="grid-two">
+      <article class="card">
+        <h3>Locomotion and landing</h3>
+        <p>
+          Humanoid work focuses on swing-foot stabilization, impedance or admittance control, and
+          whole-body formulations that remain feasible under uneven or unexpected contact.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Manipulation and teaching</h3>
+        <p>
+          Earlier work on robotic hands, dual-arm systems, and direct teaching informs how contact
+          sensing and balancing can be used to make interaction safer and more useful.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <SectionTitle
+      eyebrow="Selected references"
+      title="Publications that anchor the themes"
+      summary={`The current site headline, ${profile.headline}, is grounded in published work rather than portfolio filler.`}
+    />
+    <div class="grid-two">
+      {
+        publications.map((entry) => (
+          <PublicationCard
+            href={`/publications/${entry.data.slug}/`}
+            title={entry.data.title}
+            authors={entry.data.authors}
+            venue={entry.data.venue}
+            year={entry.data.year}
+            keywords={entry.data.keywords}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,67 @@
+---
+import { site } from '../data/site';
+import '../styles/global.css';
+
+type NavItem = (typeof site.nav)[number];
+
+interface Props {
+  title?: string;
+  description?: string;
+  type?: 'website' | 'article';
+}
+
+const { title = site.title, description = site.description, type = 'website' } = Astro.props;
+const pageTitle = title === site.title ? title : `${title} | ${site.title}`;
+const pathname = Astro.url.pathname;
+const canonical = new URL(pathname, site.url).toString();
+
+const isActive = (item: NavItem) => pathname === item.href || pathname.startsWith(item.href);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#f3ecde" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={site.title} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <div class="page-backdrop"></div>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="site-mark" href="/">
+          <span class="site-mark__name">{site.title}</span>
+          <span class="site-mark__role">Robotics Researcher & Engineer</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          {
+            site.nav.map((item) => (
+              <a href={item.href} class:list={['site-nav__link', { 'is-active': isActive(item) }]}>
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+      </header>
+      <main class="site-main">
+        <slot />
+      </main>
+      <footer class="site-footer">
+        <p>Editorial portfolio, publication archive, and writing index for robotics work.</p>
+        <p>Built with Astro and deployed on GitHub Pages.</p>
+      </footer>
+    </div>
+  </body>
+</html>

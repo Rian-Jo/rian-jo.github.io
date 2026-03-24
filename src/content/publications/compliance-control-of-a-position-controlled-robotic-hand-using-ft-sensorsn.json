@@ -1,0 +1,26 @@
+{
+  "key": "URAI2011",
+  "slug": "compliance-control-of-a-position-controlled-robotic-hand-using-ft-sensorsn",
+  "type": "inproceedings",
+  "title": "Compliance control of a position controlled robotic hand using F/T sensorsn",
+  "authors": [
+    "Joonhee Jo",
+    "Sung-Kyun Kim",
+    "Yonghwan Oh",
+    "Sang-Rok Oh"
+  ],
+  "venue": "8th International Conference on Ubiquitous Robots and Ambient Intelligence (URAI)",
+  "year": 2011,
+  "doi": "10.1109/URAI.2011.6145861",
+  "abstract": "There are a variety of robotic hands with many different hardware configurations including many sensors. For a robotic hand, physical interaction between the hand and objects is an interesting point. Compliance control is of great importance in grasping arbitrary object. In this paper, compliance control of position controlled robotic hand is attempted with external sensor on the finger tip. Utilizing an F/T sensor, sensor compensation first and then gravity compensation are executed. Overall system and algorithm are analyzed with the proposed controllers. For validating the proposed method, low-pass filter (LPF), sensor initial calibration are conducted and showed competent results.",
+  "keywords": [
+    "robot hand",
+    "compliance control"
+  ],
+  "pages": "446--450",
+  "featured": false,
+  "links": {
+    "pdf": "/publications/files/URAI2011.pdf",
+    "external": "https://ieeexplore.ieee.org/document/6145861"
+  }
+}

@@ -1,0 +1,19 @@
+---
+title: Ballbot Balance and Tracking
+summary: Contact-force-based balance and tracking control for a ballbot, using projected task-space dynamics with unilateral and friction constraints.
+period: "2020"
+order: 2
+featured: true
+systems:
+  - Ballbot
+  - Contact dynamics
+  - Task-space control
+links:
+  paper: /publications/contact-force-based-balancing-and-tracking-control-of-a-ballbot-using-projected-task-space-dynamics-with-inequality-constraints/
+---
+
+The ballbot work focuses on a compact but difficult control problem: how to recover useful control inputs when the robot and ball dynamics are tightly coupled and the contact must satisfy unilateral and friction constraints.
+
+The project uses a projected task-space formulation to decompose the robot and ball dynamics, then computes contact forces through constrained optimization before reusing those forces in the robot dynamics for control. That makes the project a strong example of the broader site theme: physically meaningful control laws that stay grounded in the contact model rather than abstract kinematics alone.
+
+It also gives the new homepage a more complete picture of the research arc by showing that the balance-control work was not limited to humanoid walking.

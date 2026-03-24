@@ -1,0 +1,20 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  summary: string;
+  period: string;
+  systems: string[];
+}
+
+const { href, title, summary, period, systems } = Astro.props;
+---
+
+<article class="card">
+  <p class="eyebrow">{period}</p>
+  <h3><a href={href}>{title}</a></h3>
+  <p>{summary}</p>
+  <div class="pill-row">
+    {systems.map((system) => <span class="pill">{system}</span>)}
+  </div>
+</article>

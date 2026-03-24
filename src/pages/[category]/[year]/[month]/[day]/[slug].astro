@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+
+import RedirectPage from '../../../../../components/RedirectPage.astro';
+import { getWritingMeta } from '../../../../../lib/writing';
+
+export async function getStaticPaths() {
+  const writing = await getCollection('writing');
+  const realPosts = writing.map((entry: CollectionEntry<'writing'>) => {
+    const meta = getWritingMeta(entry);
+    const [category] = meta.categorySegments;
+
+    return {
+      params: {
+        category,
+        year: String(meta.publishedAt.getUTCFullYear()),
+        month: String(meta.publishedAt.getUTCMonth() + 1).padStart(2, '0'),
+        day: String(meta.publishedAt.getUTCDate()).padStart(2, '0'),
+        slug: meta.legacySlug,
+      },
+      props: {
+        target: entry.id.includes('welcome-to-jekyll')
+          ? '/writing/'
+          : `/writing/${meta.canonicalSlug}/`,
+      },
+    };
+  });
+
+  return realPosts;
+}
+
+const { target } = Astro.props;
+---
+
+<RedirectPage to={target} />

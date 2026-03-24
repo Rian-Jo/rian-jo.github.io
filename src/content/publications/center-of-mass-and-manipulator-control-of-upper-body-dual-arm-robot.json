@@ -1,0 +1,21 @@
+{
+  "key": "Ryu2012Upper",
+  "slug": "center-of-mass-and-manipulator-control-of-upper-body-dual-arm-robot",
+  "type": "inproceedings",
+  "title": "Center-of-Mass and Manipulator Control of Upper-Body Dual Arm Robot",
+  "authors": [
+    "Kwanghyun Ryu",
+    "Yonghwan Oh",
+    "Joonhee Jo"
+  ],
+  "venue": "Korea Robotics Society Annual Conference (KRoC)",
+  "year": 2012,
+  "keywords": [
+    "Upper-body dual arm robot",
+    "CoM control"
+  ],
+  "featured": false,
+  "links": {
+    "pdf": "/publications/files/2nd_author/Ryu2012Upper.pdf"
+  }
+}

@@ -1,22 +1,39 @@
+# Joonhee Jo Homepage
 
-## 소개
+This repository now contains the canonical Astro site for [rian-jo.github.io](https://rian-jo.github.io).
 
-안녕하세요, 저는 조준희입니다.
+## Stack
 
-반갑습니다.
+- Astro
+- MDX
+- Typed content collections for writing, projects, and publications
+- Vitest for migration and parsing checks
+- GitHub Pages deployment via Actions
 
+## Development
 
-## 약력
+```bash
+npm install
+npm run dev
+```
 
-- 과학기술연합대학원대학교(UST) 한국과학기술연구원(KIST) 캠퍼스 로봇공학 전공 석박사과정 수료
+## Verification
 
-- 인하대학교 IT대학 전자공학 전공 학사 졸업
+```bash
+npm test
+npm run check
+npm run build
+```
 
-- 인하공업전문대학 메카트로닉스 전공 전문학사 졸업
+## Content Sources
 
+- `src/content/writing/`: migrated writing archive
+- `src/content/projects/`: curated research and systems projects
+- `src/content/publications/`: generated publication metadata
+- `data/legacy/`: preserved source bib files used during migration
 
-## 하고싶은 말
+## Notes
 
-다양한 사이드 프로젝트 제안, 친구 제안, 번개 제안 등등 해주시면 좋아합니다.
-
-행복하세요 오늘도.
+- `/home/*` routes are preserved as redirects to the new canonical pages.
+- Legacy dated blog URLs are preserved for migrated writing posts.
+- The public profile and CV are kept concise and research-first rather than mirroring a full resume export.

@@ -1,0 +1,22 @@
+{
+  "key": "KROC2012",
+  "slug": "grasping-force-control-of-three-fingers-of-a-human-like-robotic-hand-using-ft-sensory-feedback",
+  "type": "inproceedings",
+  "title": "Grasping Force Control of Three Fingers of a Human-like Robotic Hand Using F/T Sensory Feedback",
+  "authors": [
+    "Joonhee Jo",
+    "Sung-Kyun Kim",
+    "Yonghwan Oh"
+  ],
+  "venue": "Korea Robotics Society Annual Conference (KRoC)",
+  "year": 2012,
+  "keywords": [
+    "robot hand",
+    "grasping force control"
+  ],
+  "featured": false,
+  "links": {
+    "pdf": "/publications/files/KROC2012.pdf",
+    "video": "https://youtu.be/n-xIM0vGgFE"
+  }
+}

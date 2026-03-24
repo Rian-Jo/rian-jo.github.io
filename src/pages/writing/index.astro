@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../../components/BaseLayout.astro';
+import SectionTitle from '../../components/SectionTitle.astro';
+import WritingCard from '../../components/WritingCard.astro';
+import { formatDate } from '../../lib/format';
+import { getWritingMeta, isRealWritingPost, sortWriting } from '../../lib/writing';
+
+const writing = sortWriting((await getCollection('writing')).filter(isRealWritingPost));
+---
+
+<BaseLayout title="Writing">
+  <section class="section-block">
+    <SectionTitle
+      eyebrow="Writing"
+      title="Technical notes and devlog posts"
+      summary="The writing archive keeps the original articles and image paths, but it now lives in a cleaner index with clear language labels and simpler navigation."
+    />
+    <div class="card-grid">
+      {
+        writing.map((entry) => {
+          const meta = getWritingMeta(entry);
+          return (
+            <WritingCard
+              href={`/writing/${meta.canonicalSlug}/`}
+              title={entry.data.title}
+              excerpt={meta.excerpt}
+              meta={`${formatDate(meta.publishedAt)} · ${meta.readingMinutes} min read`}
+              language={meta.language}
+            />
+          );
+        })
+      }
+    </div>
+  </section>
+</BaseLayout>

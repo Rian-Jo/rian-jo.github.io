@@ -1,0 +1,27 @@
+{
+  "key": "IROS2020",
+  "slug": "impedance-control-of-humanoid-walking-on-uneven-terrain-with-centroidal-momentum-dynamics-using-quadratic-programming",
+  "type": "inproceedings",
+  "title": "Impedance Control of Humanoid Walking on Uneven Terrain With Centroidal Momentum Dynamics Using Quadratic Programming",
+  "authors": [
+    "Joonhee Jo",
+    "Yonghwan Oh"
+  ],
+  "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "year": 2020,
+  "doi": "10.1109/IROS45743.2020.9340799",
+  "abstract": "In this paper, we propose the stabilization strategy for a soft landing in a biped walking using impedance control and the optimization-based whole-body control framework. Even though proper contact forces and desired trajectories of the robot are given, the robot can be unstable easily if unexpected forces are applied to the robot or impulsive contact force is produced in the landing state while the robot is walking. Therefore, the impedance control approach using contact forces is performed to obtain the modified references that regulate the modified desired position, velocity and acceleration of the swing foot, and improves the walking stability. Moreover, we perform a whole-body control using quadratic programming (QP) that tracks the modified trajectories constrained with the centroidal momentum dynamics. To validate the algorithm, a walking task on uneven terrain using a humanoid robot is shown.",
+  "keywords": [
+    "legged locomotion",
+    "impedance control",
+    "centroidal momentum dynamics",
+    "QP"
+  ],
+  "pages": "3525--3530",
+  "featured": true,
+  "links": {
+    "pdf": "/publications/files/IROS2020.pdf",
+    "video": "https://youtu.be/8tUHJgBqsLM",
+    "external": "https://ieeexplore.ieee.org/document/9340799"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "key": "Hur2015ICAS-body",
+  "slug": "task-space-torque-controller-based-on-time-delay-control",
+  "type": "inproceedings",
+  "title": "Task-Space Torque Controller Based on Time-Delay Control",
+  "authors": [
+    "Sung-moon Hur",
+    "Joonhee Jo",
+    "Yonghwan Oh"
+  ],
+  "venue": "International Conference on Autonomic and Autonomous Systems (ICAS)",
+  "year": 2015,
+  "abstract": "In this paper, a torque control method in task-space for redundant manipulators with friction is proposed. A previous simple control approach based on virtual spring damper hypothesis is used to generate human-like motions. The method is efficient in the system which is difficult to identify the exact dynamics, however, the controller has steady state errors. To eliminate the steady state error, the gravity and friction, which is the part of the system dynamics, are compensated. Although the gravity and friction are compensated, the error of the modelling remains in the system. Hence, to reduce the nonlinearity, unknown effects, and modelling errors of the system, a torque controller based on Time-Delay Control (TDC) that eliminates the friction and unknown effects, is used. The performance of the control method, in Cartesian space control, is experimented with the torque sensor based 3-joints robot manipulator. Keywords–Task-Space; Virtual spring damper hypothesis; TimeDelay Control(TDC).",
+  "keywords": [],
+  "featured": false,
+  "links": {
+    "pdf": "/publications/files/2nd_author/Hur2015ICAS.pdf",
+    "external": "https://www.semanticscholar.org/paper/Task-Space-Torque-Controller-Based-on-Time-Delay-Hur-Jo/7e87d67d180db559751e5315bbab9cdbbac39ff2"
+  }
+}

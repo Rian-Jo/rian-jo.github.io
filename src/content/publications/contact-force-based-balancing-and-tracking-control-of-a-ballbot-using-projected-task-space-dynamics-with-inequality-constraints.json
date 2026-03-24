@@ -1,0 +1,25 @@
+{
+  "key": "UR2020",
+  "slug": "contact-force-based-balancing-and-tracking-control-of-a-ballbot-using-projected-task-space-dynamics-with-inequality-constraints",
+  "type": "inproceedings",
+  "title": "Contact Force based Balancing and Tracking Control of a Ballbot using Projected Task Space Dynamics with Inequality Constraints",
+  "authors": [
+    "Joonhee Jo",
+    "Yonghwan Oh"
+  ],
+  "venue": "International Conference on Ubiquitous Robots (UR)",
+  "year": 2020,
+  "doi": "10.1109/UR49135.2020.9144840",
+  "abstract": "Since the ball-balancing robot has been researched, many kinds of platforms and control methods have been developed for the ballbot. Even though the behavior of the robot has been achieved by previous studies, there are few studies considering the contact forces between the robot and ball. In this paper, we propose balancing and tracking control of the ballbot, with unilateral constraints. Using an adequate task transformation matrix, the task space dynamics can be divided into the dynamics of the robot and the ball respectively. This decomposition has advantages to obtain the input torque through the ball task dynamics with constraint forces. Through the proposed formalism, the contact force can be computed from the ball task space dynamics with the quadratic programming(QP) with inequality constraints such as unilateral constraints and friction constraints. The obtained contact force is used in the robot task space dynamics to get control input. In addition, the balancing force is computed using CoM reflex as a reference. Hence, using the synthesized controller, the contact force based balancing and tracking control simulation is performed.",
+  "keywords": [
+    "ballbot",
+    "projected task space dynamics",
+    "contact force balancing"
+  ],
+  "pages": "118--123",
+  "featured": true,
+  "links": {
+    "pdf": "/publications/files/UR2020.pdf",
+    "external": "https://ieeexplore.ieee.org/document/9144840"
+  }
+}

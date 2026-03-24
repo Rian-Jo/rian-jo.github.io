@@ -1,0 +1,20 @@
+{
+  "key": "RAS2021",
+  "slug": "robust-walking-stabilization-strategy-of-humanoid-robots-on-uneven-terrain-via-qp-based-impedanceadmittance-control",
+  "type": "inproceedings",
+  "title": "Robust Walking Stabilization Strategy of Humanoid Robots on Uneven Terrain via QP-based Impedance/Admittance Control",
+  "authors": [
+    "Joonhee Jo",
+    "Gyunghoon Park",
+    "Yonghwan Oh"
+  ],
+  "venue": "submitted to Robotics and Autonomous Systems (RAS)",
+  "year": 2021,
+  "keywords": [
+    "legged locomotion",
+    "walking stabilization",
+    "impedance/admittance control"
+  ],
+  "featured": true,
+  "links": {}
+}

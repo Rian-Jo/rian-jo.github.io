@@ -1,0 +1,20 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  excerpt: string;
+  meta: string;
+  language: 'en' | 'ko';
+}
+
+const { href, title, excerpt, meta, language } = Astro.props;
+---
+
+<article class="article-card">
+  <div class="pill-row">
+    <span class="pill">{language === 'ko' ? 'Korean' : 'English'}</span>
+  </div>
+  <h3 class="article-card__title"><a href={href}>{title}</a></h3>
+  <p>{excerpt}</p>
+  <p class="article-card__meta">{meta}</p>
+</article>

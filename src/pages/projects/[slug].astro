@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection, render } from 'astro:content';
+
+import BaseLayout from '../../components/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((entry: CollectionEntry<'projects'>) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props as { entry: CollectionEntry<'projects'> };
+const { Content } = await render(entry);
+---
+
+<BaseLayout title={entry.data.title}>
+  <article class="article-shell">
+    <div class="article-shell__meta">
+      <p class="eyebrow">{entry.data.period}</p>
+      <h1>{entry.data.title}</h1>
+      <p class="lede">{entry.data.summary}</p>
+      <div class="pill-row">
+        {entry.data.systems.map((system: string) => <span class="pill">{system}</span>)}
+      </div>
+      <div class="link-list">
+        {entry.data.links.paper && <a href={entry.data.links.paper}>Paper</a>}
+        {entry.data.links.video && <a href={entry.data.links.video}>Video</a>}
+        {entry.data.links.external && <a href={entry.data.links.external}>External</a>}
+        {entry.data.links.code && <a href={entry.data.links.code}>Code</a>}
+      </div>
+    </div>
+    <div class="article-shell__body">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

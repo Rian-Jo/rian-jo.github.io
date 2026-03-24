@@ -1,0 +1,21 @@
+{
+  "key": "Lee2015Whole-body",
+  "slug": "whole-body-control-of-upper-body-robot-for-picking-up-a-heavy-object",
+  "type": "inproceedings",
+  "title": "Whole-body Control of Upper-body Robot for Picking up a heavy object",
+  "authors": [
+    "Dong-hyun Lee",
+    "Sungmoon Hur",
+    "Jo Joonhee",
+    "Yonghwan Oh"
+  ],
+  "venue": "International Conference on Mechatronics Technology (ICMT)",
+  "year": 2015,
+  "abstract": "This paper presents a control method of an upper-body robot to pick up unknown-mass heavy objects. Based on the human action strategy, bound-proportional-bound center of mass(CoM) planner is proposed. To reduce the consuming torque of the robot, this planner re ects bounded portion near to the base of the robot. In an e ort to improve the stability of the robot, the CoM planner is smoothed. Then an whole-body controller with the improved CoM planner is suggested for an upper-body robot. The control scheme is expressed in the task space and no inverse kinematics are required. Dynamic simulation and experiment are conducted for validation, and have shown competent results.",
+  "keywords": [],
+  "featured": false,
+  "links": {
+    "pdf": "/publications/files/2nd_author/Lee2015Whole-body.pdf",
+    "external": "https://youtu.be/ROTNFcRr7ik"
+  }
+}

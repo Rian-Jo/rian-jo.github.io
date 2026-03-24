@@ -1,0 +1,24 @@
+{
+  "key": "ICROS2016",
+  "slug": "direct-teaching-for-upper-body-dual-arm-robot-with-whole-body-balancing",
+  "type": "article",
+  "title": "Direct Teaching for Upper-Body Dual Arm Robot with Whole Body Balancing",
+  "authors": [
+    "Joonhee Jo",
+    "DongHyun Lee",
+    "Yonghwan Oh"
+  ],
+  "venue": "Institute of Control, Robotics and Systems (ICROS)",
+  "year": 2016,
+  "abstract": "This paper presents a safety guaranteed direct teaching control of upper-body dual arm robot using whole body balancing with floating on the ground. This study is motivated in interaction between direct teaching robot and human close to each other without any protector for emergency situation. The direct teaching with whole body balancing is considered to guarantee the stability of the robot in teaching phase interacting with human and current servo is considered to teach the tasks to robot without any sensors and handles at the end-effector in position servo. Friction and gravity is also compensated to manipulate the robot with current servo more properly. Whole body balancing algorithm is validated by upper-body dual arm simulator with two cases.",
+  "keywords": [
+    "direct teaching",
+    "upper-body dual arm robot"
+  ],
+  "pages": "306--307",
+  "featured": false,
+  "links": {
+    "pdf": "/publications/files/ICROS2016.pdf",
+    "video": "https://youtu.be/qENLlVDSV1k"
+  }
+}

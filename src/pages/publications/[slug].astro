@@ -1,0 +1,75 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../../components/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const publications = await getCollection('publications');
+  return publications.map((entry: CollectionEntry<'publications'>) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props as { entry: CollectionEntry<'publications'> };
+const description = entry.data.abstract ?? `${entry.data.venue} (${entry.data.year})`;
+const pageUrl = new URL(`/publications/${entry.data.slug}/`, Astro.site ?? Astro.url).toString();
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ScholarlyArticle',
+  headline: entry.data.title,
+  description,
+  url: pageUrl,
+  datePublished: String(entry.data.year),
+  author: entry.data.authors.map((name: string) => ({
+    '@type': 'Person',
+    name,
+  })),
+  isPartOf: {
+    '@type': 'PublicationIssue',
+    name: entry.data.venue,
+  },
+  keywords: entry.data.keywords,
+  sameAs: entry.data.doi
+    ? `https://doi.org/${entry.data.doi}`
+    : entry.data.links.external ?? entry.data.links.pdf,
+};
+---
+
+<BaseLayout title={entry.data.title} description={description} type="article">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <article class="article-shell">
+    <div class="article-shell__meta">
+      <p class="eyebrow">Publication</p>
+      <h1>{entry.data.title}</h1>
+      <p>{entry.data.authors.join(', ')}</p>
+      <p class="lede">
+        {entry.data.venue} · {entry.data.year}
+      </p>
+      <div class="pill-row">
+        {entry.data.keywords.map((keyword: string) => <span class="pill">{keyword}</span>)}
+      </div>
+      <div class="link-list">
+        {entry.data.links.pdf && <a href={entry.data.links.pdf}>PDF</a>}
+        {entry.data.links.video && <a href={entry.data.links.video}>Video</a>}
+        {entry.data.links.external && <a href={entry.data.links.external}>Publisher</a>}
+        {entry.data.doi && <a href={`https://doi.org/${entry.data.doi}`}>DOI</a>}
+      </div>
+    </div>
+    <div class="article-shell__body">
+      {entry.data.abstract && (
+        <>
+          <h2>Abstract</h2>
+          <p>{entry.data.abstract}</p>
+        </>
+      )}
+      {entry.data.pages && (
+        <>
+          <h2>Reference details</h2>
+          <p>Pages: {entry.data.pages}</p>
+        </>
+      )}
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import RedirectPage from '../../components/RedirectPage.astro';
+import { resolveHomeRedirect } from '../../lib/legacy';
+
+export function getStaticPaths() {
+  const paths = [
+    ['about'],
+    ['publications'],
+    ['projects'],
+    ['projects', '2019-12-28-Projects-Teaching'],
+    ['projects', '2019-12-29-Projects-Teaching-2'],
+    ['projects', '2019-12-30-Projects-Dynamic-Walking'],
+    ['projects', '2019-12-31-Projects-Dynamic-Walking-2'],
+  ];
+
+  return paths.map((slug) => ({
+    params: { slug: slug.join('/') },
+    props: { target: resolveHomeRedirect(`/home/${slug.join('/')}/`) },
+  }));
+}
+
+const { target } = Astro.props;
+---
+
+<RedirectPage to={target} />

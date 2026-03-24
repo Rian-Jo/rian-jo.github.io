@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../../components/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import SectionTitle from '../../components/SectionTitle.astro';
+
+const projects: CollectionEntry<'projects'>[] = (await getCollection('projects')).sort(
+  (left: CollectionEntry<'projects'>, right: CollectionEntry<'projects'>) =>
+    left.data.order - right.data.order,
+);
+---
+
+<BaseLayout title="Projects">
+  <section class="section-block">
+    <SectionTitle
+      eyebrow="Projects"
+      title="Research tracks and systems work"
+      summary="Only real robotics work is surfaced here. The old theme demo entries are removed entirely."
+    />
+    <div class="card-grid">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            href={`/projects/${project.id}/`}
+            title={project.data.title}
+            summary={project.data.summary}
+            period={project.data.period}
+            systems={project.data.systems}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import { profile } from '../data/profile';
+---
+
+<BaseLayout title="About">
+  <section class="section-block">
+    <SectionTitle
+      eyebrow="About"
+      title="A clearer public identity than either of the previous sites."
+      summary="The old split between a personal homepage and a separate blog made the profile feel fragmented. This version keeps the writing archive while putting the robotics work first."
+    />
+    <div class="grid-two">
+      <article class="card">
+        <h3>{profile.name}</h3>
+        <p>{profile.shortBio}</p>
+      </article>
+      <article class="card">
+        <h3>Current public role</h3>
+        <p>
+          {profile.currentRole.title}, {profile.currentRole.organization}
+        </p>
+        <p>{profile.currentRole.affiliation}</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <SectionTitle
+      eyebrow="Research areas"
+      title="Public-facing focus"
+      summary="The site emphasizes the problems you appear to return to repeatedly across papers, project videos, and public bios."
+    />
+    <div class="grid-two">
+      {profile.researchAreas.map((area) => <article class="card"><p>{area}</p></article>)}
+    </div>
+  </section>
+</BaseLayout>

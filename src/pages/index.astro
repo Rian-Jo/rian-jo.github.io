@@ -1,0 +1,159 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+import BaseLayout from '../components/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import PublicationCard from '../components/PublicationCard.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import WritingCard from '../components/WritingCard.astro';
+import { profile } from '../data/profile';
+import { site } from '../data/site';
+import { formatDate } from '../lib/format';
+import { sortPublications } from '../lib/publications';
+import { getWritingMeta, isRealWritingPost, sortWriting } from '../lib/writing';
+
+const publications = sortPublications(await getCollection('publications'));
+const selectedPublications = site.selectedPublicationKeys
+  .map((key) => publications.find((entry) => entry.data.key === key))
+  .filter((entry): entry is CollectionEntry<'publications'> => Boolean(entry));
+const projects: CollectionEntry<'projects'>[] = (await getCollection('projects'))
+  .filter((entry: CollectionEntry<'projects'>) => entry.data.featured)
+  .sort(
+    (left: CollectionEntry<'projects'>, right: CollectionEntry<'projects'>) =>
+      left.data.order - right.data.order,
+  );
+const writing = sortWriting((await getCollection('writing')).filter(isRealWritingPost)).slice(0, 3);
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Research-first homepage</p>
+      <h1>{site.heroTitle}</h1>
+      <p class="hero__summary">{site.heroSummary}</p>
+      <div class="button-row">
+        <a class="button button--primary" href="/publications/">Browse publications</a>
+        <a class="button" href="/cv/">View concise CV</a>
+      </div>
+    </div>
+    <aside class="hero__aside">
+      <div class="portrait-card">
+        <img src="/images/profile-face.JPG" alt="Portrait of Joonhee Jo" />
+      </div>
+      <div class="info-card">
+        <h3>{profile.currentRole.title}</h3>
+        <p>{profile.currentRole.organization}</p>
+        <p>{profile.currentRole.affiliation}</p>
+      </div>
+    </aside>
+  </section>
+
+  <section class="section-block">
+    <SectionTitle
+      eyebrow="Research focus"
+      title="Three threads connect the work."
+      summary="The site is organized around locomotion, balance, and physically interactive control rather than around theme-specific blog categories."
+    />
+    <div class="grid-three">
+      {
+        site.researchFocus.map((item) => (
+          <article class="card">
+            <h3>{item.title}</h3>
+            <p>{item.summary}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section-block">
+    <SectionTitle
+      eyebrow="Selected publications"
+      title="A curated entry point into the publication archive."
+      summary="These papers capture the main control and locomotion themes that define the public profile of the site."
+    />
+    <div class="grid-two">
+      {
+        selectedPublications.map((entry) => (
+          <PublicationCard
+            href={`/publications/${entry.data.slug}/`}
+            title={entry.data.title}
+            authors={entry.data.authors}
+            venue={entry.data.venue}
+            year={entry.data.year}
+            keywords={entry.data.keywords}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section-block">
+    <SectionTitle
+      eyebrow="Selected projects"
+      title="Projects are presented as research programs, not theme demos."
+      summary="The old Hydejack demo pages are gone; each project here now corresponds to a real robotics problem or research track."
+    />
+    <div class="card-grid">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            href={`/projects/${project.id}/`}
+            title={project.data.title}
+            summary={project.data.summary}
+            period={project.data.period}
+            systems={project.data.systems}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section-block">
+    <SectionTitle
+      eyebrow="Recent writing"
+      title="The existing writing archive stays available and clearly labeled."
+      summary="Technical notes, Python and system setup articles, and the older devlog material are preserved without keeping the old Jekyll presentation."
+    />
+    <div class="card-grid">
+      {
+        writing.map((entry) => {
+          const meta = getWritingMeta(entry);
+          return (
+            <WritingCard
+              href={`/writing/${meta.canonicalSlug}/`}
+              title={entry.data.title}
+              excerpt={meta.excerpt}
+              meta={`${formatDate(meta.publishedAt)} / ${meta.readingMinutes} min read`}
+              language={meta.language}
+            />
+          );
+        })
+      }
+    </div>
+  </section>
+
+  <section class="section-block">
+    <SectionTitle
+      eyebrow="Short bio"
+      title={`${profile.name} builds research-facing robotics work into a single public narrative.`}
+      summary={profile.shortBio}
+    />
+    <div class="grid-two">
+      <article class="card">
+        <h3>Current public profile</h3>
+        <p>
+          {profile.currentRole.title} at {profile.currentRole.organization}, with the public-facing site
+          centered on humanoid locomotion, whole-body control, and physically interactive robotics.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Contact</h3>
+        <div class="link-list">
+          {profile.contactLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+        </div>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

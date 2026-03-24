@@ -1,0 +1,23 @@
+{
+  "key": "KROC2013",
+  "slug": "strategy-of-stable-grasp-and-internal-force-control-using-multi-fingered-human-link-robotic-hand",
+  "type": "inproceedings",
+  "title": "Strategy of Stable Grasp and Internal Force Control Using Multi-Fingered Human-link Robotic Hand",
+  "authors": [
+    "Joonhee Jo",
+    "Sung-Kyun Kim",
+    "Yonghwan Oh"
+  ],
+  "venue": "Korea Robotics Society Annual Conference (KRoC)",
+  "year": 2013,
+  "keywords": [
+    "robotic hand",
+    "stable grasp strategy",
+    "internal force control"
+  ],
+  "pages": "51--52",
+  "featured": false,
+  "links": {
+    "pdf": "/publications/files/KROC2013.pdf"
+  }
+}

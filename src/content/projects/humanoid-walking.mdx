@@ -1,0 +1,20 @@
+---
+title: Humanoid Walking on Uneven Terrain
+summary: A research track on landing stabilization, impedance control, and centroidal momentum formulations for humanoid walking under uncertain terrain contact.
+period: "2019–2022"
+order: 1
+featured: true
+systems:
+  - Humanoid robotics
+  - Whole-body control
+  - Uneven terrain locomotion
+links:
+  paper: /publications/impedance-control-of-humanoid-walking-on-uneven-terrain-with-centroidal-momentum-dynamics-using-quadratic-programming/
+  video: https://youtu.be/8tUHJgBqsLM
+---
+
+This project groups the locomotion work that now forms the backbone of the public research profile. The focus is not generic walking demos, but the control problems that appear when a humanoid lands on uneven terrain, encounters unexpected contact, or needs to stabilize swing-foot motion without losing the whole-body objective.
+
+The main thread runs from the ICINCO 2019 and IROS 2020 work on tracking modified swing-foot trajectories through a quadratic-programming whole-body controller, into the ICRA 2021 landing-stabilization work on heel-strike motion and hybrid admittance control. The recurring goal is to keep the robot dynamically consistent even when contact timing or contact force is unfavorable.
+
+What matters here is the combination of control structure and physical realism. The problem is framed through centroidal momentum, contact constraints, and impedance or admittance behavior rather than through isolated simulation-only motion clips.
