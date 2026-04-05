@@ -1,0 +1,20 @@
+{
+  "name": "defu",
+  "version": "6.1.5",
+  "description": "Recursively assign default properties. Lightweight and Fast!",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/defu.d.ts",
+      "import": "./dist/defu.mjs",
+      "require": "./lib/defu.cjs"
+    }
+  },
+  "main": "./lib/defu.cjs",
+  "module": "./dist/defu.mjs",
+  "types": "./dist/defu.d.ts",
+  "files": [
+    "dist",
+    "lib"
+  ]
+}
