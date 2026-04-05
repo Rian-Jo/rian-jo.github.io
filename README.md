@@ -38,3 +38,16 @@ npm run build
 - Legacy dated blog URLs are preserved for migrated writing posts.
 - The public profile and CV are kept concise and research-first rather than mirroring a full resume export.
 - In GitHub Pages settings, the source must be `GitHub Actions`. Branch-based Pages builds will try to build the Astro source tree directly and fail.
+
+## Resolving conflicted PRs
+
+When multiple open PRs are blocked by merge conflicts, run:
+
+```bash
+./scripts/resolve-pr-conflicts.sh [base-branch] [limit]
+```
+
+- `base-branch` defaults to the repository default branch.
+- `limit` defaults to `20` open PRs.
+- The script detects open PRs in the `DIRTY` merge state, rebases each PR branch onto the latest base branch, and force-pushes successful rebases.
+
